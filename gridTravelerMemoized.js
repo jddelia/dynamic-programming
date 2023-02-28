@@ -3,9 +3,7 @@
 function gridTraveler(col, row, memo = {}) {
   const key = col > row ? `${col},${row}` : `${row},${col}`;
 
-  if (memo[key]) {
-    return memo[key];
-  }
+  if (key in memo) return memo[key];
 
   if (col === 0 || row === 0) return 0;
 
