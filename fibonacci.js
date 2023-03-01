@@ -1,4 +1,4 @@
-// This function solves for fibonacci(n), where n is the number of terms in the sequence.
+// This function solves for fibonacci(n), where n is the nth place in the sequence.
 
 function fibonacci(n) {
   if (n === 0) return 0;
