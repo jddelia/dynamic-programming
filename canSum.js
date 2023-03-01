@@ -16,4 +16,4 @@ function canSum(target, nums) {
 console.log(canSum(7, [2, 3, 4]));
 console.log(canSum(7, [2, 4]));
 console.log(canSum(8, [2, 3, 5]));
-console.log(canSum(200, [6, 9]));
+console.log(canSum(2000, [6, 9]));

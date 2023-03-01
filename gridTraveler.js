@@ -13,4 +13,4 @@ function gridTraveler(col, row) {
 
 console.log(gridTraveler(2, 3));
 console.log(gridTraveler(3, 3));
-console.log(gridTraveler(15, 15));
+console.log(gridTraveler(50, 50));

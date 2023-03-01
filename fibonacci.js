@@ -12,4 +12,4 @@ function fibonacci(n) {
 
 console.log(fibonacci(1)); // 1
 console.log(fibonacci(5)); // 5
-console.log(fibonacci(40)); // 102334155
+console.log(fibonacci(100)); // 102334155
