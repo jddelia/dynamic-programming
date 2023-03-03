@@ -6,17 +6,19 @@ class Node {
   }
 }
 
-function depthFirstSearch(node, vals = { nodes: "" }) {
-  if (node.val === null) return;
+function depthFirstSearch(node) {
+  let res = [];
 
-  if (node.val) {
-    vals.nodes += node.val;
-
-    if (node.left) depthFirstSearch(node.left, vals);
-    if (node.right) depthFirstSearch(node.right, vals);
+  let stack = [node];
+  let current;
+  while (stack.length > 0) {
+    current = stack.pop();
+    res.push(current.val);
+    if (current.right) stack.push(current.right);
+    if (current.left) stack.push(current.left);
   }
 
-  return vals.nodes;
+  return res;
 }
 
 const a = new Node("a");
@@ -33,3 +35,4 @@ b.right = e;
 c.right = f;
 
 console.log(depthFirstSearch(a));
+console.log(depthFirstSearch(""));
