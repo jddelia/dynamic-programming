@@ -6,13 +6,22 @@ class Node {
   }
 }
 
-function depthFirstSearchRecursive(node, vals = { nodes: [] }) {
+function depthFirstSearchRecursive(node) {
+  if (node === null) return [];
+
+  const leftTree = depthFirstSearchRecursive(node.left);
+  const rightTree = depthFirstSearchRecursive(node.right);
+
+  return [node.val, ...leftTree, ...rightTree];
+}
+
+function depthFirstSearchRecursive2(node, vals = { nodes: [] }) {
   if (node.val === null) return;
 
   vals.nodes.push(node.val);
 
-  if (node.left) depthFirstSearchRecursive(node.left, vals);
-  if (node.right) depthFirstSearchRecursive(node.right, vals);
+  if (node.left) depthFirstSearchRecursive2(node.left, vals);
+  if (node.right) depthFirstSearchRecursive2(node.right, vals);
 
   return vals.nodes;
 }
@@ -31,3 +40,4 @@ b.right = e;
 c.right = f;
 
 console.log(depthFirstSearchRecursive(a));
+console.log(depthFirstSearchRecursive2(a));
