@@ -6,10 +6,10 @@ class Node {
   }
 }
 
-function depthFirstSearchRecursive(node, vals = { nodes: "" }) {
+function depthFirstSearchRecursive(node, vals = { nodes: [] }) {
   if (node.val === null) return;
 
-  vals.nodes += node.val;
+  vals.nodes.push(node.val);
 
   if (node.left) depthFirstSearchRecursive(node.left, vals);
   if (node.right) depthFirstSearchRecursive(node.right, vals);
