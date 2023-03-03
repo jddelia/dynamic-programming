@@ -23,6 +23,20 @@ function treeIncludes(root, value) {
   return false;
 }
 
+function treeIncludesQueue(root, value) {
+  let queue = [root];
+  let current;
+  while (queue.length > 0) {
+    current = queue.shift();
+    if (current.val === value) return true;
+
+    if (current.left) queue.push(current.left);
+    if (current.right) queue.push(current.right);
+  }
+
+  return false;
+}
+
 const a = new Node("a");
 const b = new Node("b");
 const c = new Node("c");
@@ -38,3 +52,5 @@ c.right = f;
 
 console.log(treeIncludes(a, "f"));
 console.log(treeIncludes(a, "h"));
+console.log(treeIncludesQueue(a, "f"));
+console.log(treeIncludesQueue(a, "h"));
