@@ -10,12 +10,7 @@ class Node {
 
 function treeSumRecursive(root) {
   if (!root) return 0;
-  if (!root.left && !root.right) return root.val;
-
-  let leftTotal = root.left ? treeSumRecursive(root.left) : 0;
-  let rightTotal = root.right ? treeSumRecursive(root.right) : 0;
-
-  return root.val + leftTotal + rightTotal;
+  return root.val + treeSumRecursive(root.left) + treeSumRecursive(root.right);
 }
 
 const a = new Node(1);
