@@ -6,16 +6,16 @@ class Node {
   }
 }
 
-function depthFirstSearch(node) {
+function breadthFirstSearch(node) {
   let res = [];
 
-  let stack = [node];
-  let current;
-  while (stack.length > 0) {
-    current = stack.pop();
+  let queue = [node];
+  while (queue.length > 0) {
+    current = queue.shift();
     res.push(current.val);
-    if (current.right) stack.push(current.right);
-    if (current.left) stack.push(current.left);
+
+    if (current.left) queue.push(current.left);
+    if (current.right) queue.push(current.right);
   }
 
   return res;
@@ -34,4 +34,4 @@ b.left = d;
 b.right = e;
 c.right = f;
 
-console.log(depthFirstSearch(a));
+console.log(breadthFirstSearch(a));
