@@ -29,6 +29,18 @@ function maxRootToLeaf(
   return memo.max;
 }
 
+function maxRootToLeaf2(root) {
+  if (!root) return;
+  if (!root.left && !root.right) {
+    return [root.val];
+  }
+
+  const left = root.left ? maxRootToLeaf2(root.left) : 0;
+  const right = root.right ? maxRootToLeaf2(root.right) : 0;
+
+  return root.val + Math.max(left, right);
+}
+
 const a = new Node(10);
 const b = new Node(2);
 const c = new Node(3);
@@ -49,3 +61,4 @@ c.right = f;
 // g.right = i;
 
 console.log(maxRootToLeaf(a));
+console.log(maxRootToLeaf2(a));

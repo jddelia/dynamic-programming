@@ -8,7 +8,7 @@ class Node {
   }
 }
 
-function treeMin(root) {
+function treeMax(root) {
   let max = root.val;
 
   let stack = [root];
@@ -24,7 +24,7 @@ function treeMin(root) {
   return max;
 }
 
-function treeMinQueue(root) {
+function treeMaxQueue(root) {
   let max = root.val;
 
   let queue = [root];
@@ -53,5 +53,5 @@ b.left = d;
 b.right = e;
 c.right = f;
 
-console.log(treeMin(a));
-console.log(treeMinQueue(a));
+console.log(treeMax(a));
+console.log(treeMaxQueue(a));
