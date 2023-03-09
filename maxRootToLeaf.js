@@ -31,7 +31,7 @@ function maxRootToLeaf(
 
 function maxRootToLeaf2(root) {
   if (!root.left && !root.right) {
-    return [root.val];
+    return root.val;
   }
 
   const left = root.left ? maxRootToLeaf2(root.left) : -Infinity;
