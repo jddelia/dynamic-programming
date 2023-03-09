@@ -35,8 +35,8 @@ function maxRootToLeaf2(root) {
     return [root.val];
   }
 
-  const left = root.left ? maxRootToLeaf2(root.left) : 0;
-  const right = root.right ? maxRootToLeaf2(root.right) : 0;
+  const left = root.left ? maxRootToLeaf2(root.left) : -Infinity;
+  const right = root.right ? maxRootToLeaf2(root.right) : -Infinity;
 
   return root.val + Math.max(left, right);
 }
