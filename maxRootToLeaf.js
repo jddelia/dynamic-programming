@@ -30,7 +30,6 @@ function maxRootToLeaf(
 }
 
 function maxRootToLeaf2(root) {
-  if (!root) return;
   if (!root.left && !root.right) {
     return [root.val];
   }
