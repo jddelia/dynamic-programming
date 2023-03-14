@@ -1,4 +1,4 @@
-// This function shows the list of numbers which sum up to a given target value.
+// This function returns the list of numbers which sum up to a given target value.
 
 function howSum(target, nums, memo = {}) {
   if (target in memo) return memo[target];
